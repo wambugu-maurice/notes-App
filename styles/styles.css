@@ -1,0 +1,336 @@
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.mainPage{
+    background-color: #caf0f8;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+}
+
+#modalOverlay{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    display: none;
+    flex-direction: column;
+}
+
+.modals{
+    background: white;
+    width: 500px;
+    max-width: 90%;
+    padding: 20px;
+    border-radius: 12px;
+    animation: pop .25s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.contentArea{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#toggleBtn{
+    background-color: blue;
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+    margin-top: 5px;
+    color: white;
+}
+
+#deleteBtn{
+    background-color: orangered;
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+    margin: 5px;
+    color: white;
+}
+
+@keyframes pop{
+    from{
+        transform: scale(.8);
+        opacity: 0;
+    }
+
+    to{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.viewPage,
+.editPage{
+    background-color: #caf0f8;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+}
+
+.editContainer{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: center;
+}
+
+.buttons{
+    display: flex;
+    gap: 10px;
+    margin-top: 6px;
+}
+
+.buttons a{
+    text-decoration: none;
+    color: white;
+}
+
+.buttons button{
+    width: 100px;
+    background-color: #0077b6;
+    border-radius: 10px;
+    color: white;
+    border: none;
+    padding: 5px;
+}
+
+.button,
+#editNote{
+    width: 100px;
+    background-color: #0077b6;
+    border-radius: 10px;
+    color: white;
+    border: none;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+#backBtn a,
+#editBtn a{
+    color: white;
+    text-decoration: none;
+}
+
+.mb-3{
+    width: 80%;
+}
+
+.leftPage{
+    display: flex;
+    flex-direction: column;
+    padding: 100px 10px 0 50px;
+    gap: 30px;
+    width: 20%;
+    background-color: #B8B8FF;
+}
+
+.notesSide{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-top: 30px;
+    padding-left: 40px;
+}
+
+#logoutBtn,
+#openModal{
+    padding: 6px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0077b6;
+    color: white;
+}
+
+.card{
+    background-color: #4361ee;
+    width: 500px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.card h2{
+    max-width: 300px;
+}
+
+.card p{
+    max-width: 400px;
+}
+
+.loginPage,
+.signUpPage{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #caf0f8;
+}
+
+.loginContainer,
+.signUpContainer{
+    display: flex;
+    flex-direction: column;
+    margin-top: 60px;
+    width: 40%;
+    height: fit-content;
+    gap: 6px;
+    padding: 10px;
+    background-color: #48cae4;
+}
+
+#loginBtn,
+#signBtn{
+    width: 200px;
+    margin: 0 auto;
+    padding: 5px;
+}
+
+#msg{
+    position: relative;
+}
+
+.message,
+.errorMessage{
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 6px;
+    z-index: 9999;
+}
+
+.message{
+    background: green;
+}
+
+.errorMessage{
+    background: orangered;
+}
+
+.ql-toolbar,
+.ql-container,
+.viewPage input{
+    width: 100%;
+    max-width: 400px;
+}
+
+.ql-toolbar{
+    background: lightgray;
+    border: 1px solid #2c2c2c;
+}
+
+.ql-container{
+    background: white;
+    border: 1px solid #2c2c2c;
+    border-top: none;
+}
+
+.ql-editor{
+    color: black;
+    min-height: 100px;
+    font-size: 16px;
+}
+
+@media (max-width: 992px){
+
+    .leftPage{
+        width: 220px;
+        padding: 30px 15px;
+    }
+
+    .notesSide{
+        width: calc(100% - 220px);
+        padding: 20px;
+    }
+
+    .loginContainer,
+    .signUpContainer{
+        width: 70%;
+    }
+
+    .editContainer{
+        width: 80%;
+    }
+}
+
+@media (max-width: 768px){
+
+    .leftPage{
+        width: 170px;
+        padding: 20px 10px;
+        gap: 15px;
+    }
+
+    .notesSide{
+        width: calc(100% - 170px);
+        padding: 15px;
+        margin-top: 20px;
+    }
+
+    .card{
+        width: 100%;
+        border-radius: 20px;
+        padding: 15px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .card h2,
+    .card p{
+        max-width: 100%;
+        word-break: break-word;
+    }
+
+    .loginContainer,
+    .signUpContainer{
+        width: 90%;
+    }
+
+    .editContainer{
+        width: 95%;
+    }
+
+    .buttons{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .buttons button,
+    .button,
+    #editNote{
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .modals{
+        width: 95%;
+    }
+
+    #loginBtn,
+    #signBtn{
+        width: 100%;
+    }
+
+    .message,
+    .errorMessage{
+        width: 90%;
+        text-align: center;
+    }
+}
