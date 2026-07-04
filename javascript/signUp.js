@@ -16,14 +16,12 @@ document.getElementById("signBtn").onclick = function(){
         createdOn: Date.now()
     }).then(()=>{
         window.location.href = "login.html"
-    })
-  })
-  .catch((error) => {
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    // ..
-    console.error(errorMessage)
-  });
+   
+  }) }).catch((error)=>{
+        if (error.code === "auth/email-already-in-use") {
+            alert("Email already exists.");
+    }})
+  
 }
 
 
